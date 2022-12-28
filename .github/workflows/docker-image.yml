@@ -2,7 +2,7 @@ name: Build and push docker image
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
@@ -13,6 +13,6 @@ jobs:
     - name: Docker login
       run: docker login -u gelugu -p ${{secrets.DOCKER_HUB_TOKEN}}
     - name: Build the Docker image
-      run: docker build -t gelugu/black-feb-bot:0.2.0 .
+      run: make docker-build
     - name: Push the Docker image
-      run: docker push gelugu/black-feb-bot:0.2.0
+      run: make docker-push
