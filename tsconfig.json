@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "target": "es2021",
+    "module": "commonjs",
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strictNullChecks": false
+  },
+  "include": ["./src/**/*.ts"]
+}

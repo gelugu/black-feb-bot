@@ -1,0 +1,18 @@
+name: Build and push docker image
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Docker login
+      run: docker login -u gelugu -p ${{secrets.DOCKER_HUB_TOKEN}}
+    - name: Build the Docker image
+      run: docker build -t gelugu/black-feb-bot:0.2.0 .
+    - name: Push the Docker image
+      run: docker push gelugu/black-feb-bot:0.2.0

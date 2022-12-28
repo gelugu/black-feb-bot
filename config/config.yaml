@@ -1,0 +1,48 @@
+# bot settings
+bot_name: "Black february"
+
+parse_mode: "MarkdownV2"
+
+commands:
+  - name: start
+    description: Показать велком-сообщение
+    staffOnly: false
+    text: >
+      Привет! Это бот "Чёрного Февраля".
+      Сюда можно отправить сообщение, оно будет передано координаторам.
+  - name: ban
+    description: Заблокировать пользователя
+    staffOnly: true
+    text: Пока не реализовано
+  - name: unban
+    description: Разблокировать пользователя
+    staffOnly: true
+    text: Пока не реализовано
+  - name: help
+    description: Вывести это сообщение
+    staffOnly: false
+    text: |
+      *Доступные команды:*
+      - /start - Показать велком-сообщение
+      - /help - Вывести это сообщение
+    staffText: |
+      *Доступные команды:*
+      - /start - Показать велком-сообщение
+      - /help - Вывести это сообщение
+      - /ban - *Staff* Забанить пользователя
+      - /unban - *Staff* Разбанить пользователя
+
+# customize your language
+language:
+  # user chat
+  userReplyMessage: "Спасибо! Мы получили ваше обращение. Скоро вернёмся с ответом."
+  dear: "Привет,"
+  regards: "С уважением, команда Чёрного Февраля"
+  # staff chat
+  newMessageFrom: "Новое сообщение от пользователя"
+  messageSentToUser: "Сообщение отправлено пользователю"
+  language: "Язык"
+  noCaptionWarning: "*ВНИМАНИЕ*: Не отвечайте на сообщения без текста и описания (видео-кружки, стикеры и тд). В этом случае нужно ответить на сообщение ниже (оно содержит индентификатор вида ```id:123456789:123```)"
+
+# not implenemted yet
+autoreply:
