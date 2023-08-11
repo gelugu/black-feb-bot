@@ -13,9 +13,9 @@ docker-push:
 	docker push ${container_name}
 
 encrypt:
-	ansible-vault encrypt --vault-password-file .vault.pass secrets.yml
+	ansible-vault encrypt --vault-password-file .vault.pass k8s/secrets.yml
 decrypt:
-	ansible-vault decrypt --vault-password-file .vault.pass secrets.yml
+	ansible-vault decrypt --vault-password-file .vault.pass k8s/secrets.yml
 
 update-secrets:
 	kubectl apply -f secrets.yml

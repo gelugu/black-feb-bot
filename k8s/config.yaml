@@ -1,39 +1,8 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: black-feb-bot
-  labels:
-    app: black-feb-bot
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: black-feb-bot
-  template:
-    metadata:
-      labels:
-        app: black-feb-bot
-    spec:
-      containers:
-        - name: black-feb-bot
-          image: gelugu/black-feb-bot:0.2.0
-          imagePullPolicy: Always
-          volumeMounts:
-            - name: mnt
-              mountPath: /bot/config/config.yaml
-              subPath: config
-          envFrom:
-            - secretRef:
-                name: black-feb-bot-secrets
-      volumes:
-      - name: mnt
-        configMap:
-          name: black-feb-bot-config
----
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: black-feb-bot-config
+  name: bot-config
+  namespace: black-feb
 data:
   config: |
     # bot settings
